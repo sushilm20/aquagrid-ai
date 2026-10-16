@@ -329,6 +329,14 @@ body {
   box-shadow: 0 24px 60px rgb(0 0 0 / 0.45), 0 0 32px rgb(34 211 238 / 0.12), inset 0 1px 0 rgb(255 255 255 / 0.08);
 }
 
+/* hero stat counters: override the Arc counter's fixed font-size/weight so the
+   number fits narrow cards; the unit is a separate wrapping span in Hero.tsx */
+.stat-counter .counter {
+  font-size: clamp(1.3rem, 1rem + 2.2vw, 1.875rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
 /* aqua gradient headline text */
 .aqua-text {
   background: linear-gradient(100deg, #a5f3fc 0%, #22d3ee 45%, #0aa5c2 100%);

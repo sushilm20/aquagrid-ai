@@ -82,10 +82,11 @@ export default function Hero() {
               variants={rise}
               className="glass hoverable rounded-2xl p-5"
             >
-              <div className="flex min-w-0 items-center gap-2 text-2xl font-black leading-tight text-[#22d3ee] md:text-3xl">
+              <div className="stat-counter flex min-w-0 items-center gap-2 text-[#22d3ee]">
                 <Droplet size={24} className="shrink-0" />
-                <span className="min-w-0">
-                  <AnimatedCounter value={s.value} decimals={s.decimals ?? 0} prefix={s.prefix} suffix={s.suffix} animateOnView />
+                <span className="min-w-0 leading-none">
+                  <AnimatedCounter value={s.value} decimals={s.decimals ?? 0} prefix={s.prefix} animateOnView />
+                  {s.suffix && <span className="whitespace-normal text-[0.62em] font-extrabold">{s.suffix}</span>}
                 </span>
               </div>
               <div className="mt-2 text-[13px] font-semibold leading-snug text-[#d9edf5]">{s.label}</div>
