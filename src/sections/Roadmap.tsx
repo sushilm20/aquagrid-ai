@@ -39,7 +39,7 @@ const EVENTS = [
 export default function Roadmap() {
   return (
     <Section id="roadmap" eyebrow="Execution · 11 — Roadmap" title="Road to the video pitch">
-      <div className="rounded-2xl border border-neutral-200 bg-white p-6">
+      <div className="rounded-2xl border glass p-6">
         <Timeline events={EVENTS} now={now} label="Roadmap" />
       </div>
     </Section>

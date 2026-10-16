@@ -24,9 +24,9 @@ export default function Risks() {
     <Section id="risks" eyebrow="Research · 10 — Risks, honestly" title="What could go wrong (and our answer)" tint>
       <div className="grid gap-3 md:grid-cols-2">
         {RISKS.map((r) => (
-          <div key={r.q} className="rounded-2xl border border-neutral-200 bg-white p-6">
-            <div className="font-extrabold text-[#0a0a0b]">{r.q}</div>
-            <p className="mt-2 text-[14px] leading-relaxed text-neutral-600">{r.a}</p>
+          <div key={r.q} className="rounded-2xl border glass p-6">
+            <div className="font-extrabold text-white">{r.q}</div>
+            <p className="mt-2 text-[14px] leading-relaxed text-[#aecbda]">{r.a}</p>
           </div>
         ))}
       </div>

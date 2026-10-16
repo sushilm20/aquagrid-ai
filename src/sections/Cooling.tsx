@@ -1,4 +1,5 @@
 import Section from "@/components/Section";
+import CoolingTower from "@/components/water/CoolingTower";
 import { motion, useReducedMotion } from "motion/react";
 
 const LOSSES = [
@@ -16,20 +17,23 @@ export default function Cooling() {
       title="Where the water actually goes"
       lead={
         <>
-          An evaporative cooling tower loses water through <strong className="text-[#0a0a0b]">three paths</strong> ✅ (US DOE).
+          An evaporative cooling tower loses water through <strong className="text-white">three paths</strong> ✅ (US DOE).
           Judges will test whether the team understands the physics — here's the breakdown, and which lever AquaGrid pulls on each.
-          <span className="text-neutral-500"> (Shares are typical/illustrative; savings figures are DOE-reported 📰.)</span>
+          <span className="text-[#7fa8bb]"> (Shares are typical/illustrative; savings figures are DOE-reported 📰.)</span>
         </>
       }
       tint
     >
-      <div className="rounded-2xl border border-neutral-200 bg-white p-6 md:p-8">
+      <div className="mb-6">
+        <CoolingTower />
+      </div>
+      <div className="rounded-2xl border glass p-6 md:p-8">
         {LOSSES.map((l, i) => (
           <div key={l.name} className="mb-7 last:mb-0">
             <div className="mb-2 flex items-baseline justify-between">
-              <span className="font-extrabold text-[#0a0a0b]">{l.name} <span className="ml-1 text-[12px] font-bold text-neutral-500">~{l.pct}% of tower loss (typical)</span></span>
+              <span className="font-extrabold text-white">{l.name} <span className="ml-1 text-[12px] font-bold text-[#7fa8bb]">~{l.pct}% of tower loss (typical)</span></span>
             </div>
-            <div className="h-3.5 overflow-hidden rounded-full bg-neutral-100">
+            <div className="h-3.5 overflow-hidden rounded-full bg-white/10">
               <motion.div
                 className="h-full rounded-full"
                 style={{ background: `linear-gradient(90deg, ${l.color}, ${l.color}cc)` }}
@@ -39,23 +43,23 @@ export default function Cooling() {
                 transition={{ duration: 1.2, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
               />
             </div>
-            <p className="mt-2 text-[14px] text-neutral-600">{l.d}</p>
+            <p className="mt-2 text-[14px] text-[#aecbda]">{l.d}</p>
           </div>
         ))}
       </div>
 
       <div className="mt-5 grid gap-3 md:grid-cols-2">
-        <div className="rounded-2xl border border-neutral-200 bg-white p-6">
-          <div className="font-extrabold text-[#0a0a0b]">🔁 Cycles of concentration — the master lever</div>
-          <p className="mt-2 text-[14px] text-neutral-600">
+        <div className="rounded-2xl border glass p-6">
+          <div className="font-extrabold text-white">🔁 Cycles of concentration — the master lever</div>
+          <p className="mt-2 text-[14px] text-[#aecbda]">
             CoC = dissolved-solids ratio of circulating to makeup water, read via conductivity ✅ (e.g. 1500 µS/cm ÷ 500 µS/cm = 3 cycles).
             Most towers run 2–4 cycles on municipal water. Worked example 📰: at 10 gpm evaporation, 3→6 cycles cuts makeup 15→12 gpm ={" "}
             <strong className="text-[#0aa5c2]">~1.58M gallons/year</strong> in 24/7 operation. Gains are front-loaded — 2→5 captures most of it.
           </p>
         </div>
-        <div className="rounded-2xl border border-neutral-200 bg-white p-6">
-          <div className="font-extrabold text-[#0a0a0b]">🌡️ The IT-load connection</div>
-          <p className="mt-2 text-[14px] text-neutral-600">
+        <div className="rounded-2xl border glass p-6">
+          <div className="font-extrabold text-white">🌡️ The IT-load connection</div>
+          <p className="mt-2 text-[14px] text-[#aecbda]">
             Cooling demand follows compute load with a lag. By correlating <strong>IT power draw + weather + water temperature</strong>,
             AquaGrid predicts demand hours ahead and pre-positions the tower — cutting water <em>and</em> fan/pump energy together.
             (Tradeoff to know 📰: evaporative cooling ↑WUE but ↓PUE; air cooling is the reverse — Equinix.)

@@ -29,17 +29,17 @@ export default function Tech() {
     >
       <div className="grid gap-3 md:grid-cols-2">
         {CARDS.map((c) => (
-          <div key={c.t} className="rounded-2xl border border-neutral-200 bg-white p-6">
-            <div className="font-extrabold text-[#0a0a0b]">{c.t}</div>
-            <p className="mt-2 text-[14px] leading-relaxed text-neutral-600">{c.d}</p>
+          <div key={c.t} className="rounded-2xl border glass p-6">
+            <div className="font-extrabold text-white">{c.t}</div>
+            <p className="mt-2 text-[14px] leading-relaxed text-[#aecbda]">{c.d}</p>
           </div>
         ))}
       </div>
       <div className="mt-6 flex flex-wrap gap-2">
-        <span className="rounded-full bg-[#cd040b]/10 px-4 py-2 text-[13px] font-extrabold text-[#cd040b]">Cost &amp; Sustainability Transformation · primary</span>
-        <span className="rounded-full bg-[#0aa5c2]/10 px-4 py-2 text-[13px] font-extrabold text-[#055f73]">AI-Driven Automation &amp; Efficiency · secondary</span>
+        <span className="rounded-full bg-[#cd040b]/10 px-4 py-2 text-[13px] font-extrabold text-[#ff8a8e]">Cost &amp; Sustainability Transformation · primary</span>
+        <span className="rounded-full bg-[#0aa5c2]/10 px-4 py-2 text-[13px] font-extrabold text-[#67e8f9]">AI-Driven Automation &amp; Efficiency · secondary</span>
       </div>
-      <p className="mt-4 max-w-3xl text-[13.5px] text-neutral-600">
+      <p className="mt-4 max-w-3xl text-[13.5px] text-[#aecbda]">
         The competition demands <em>use of Verizon's network capabilities, scalability, and tangible business outcomes</em> —
         every layer above is a Verizon capability, the mesh scales site-to-site on the same SIM profile, and the outcomes are
         metered in gallons and dollars.

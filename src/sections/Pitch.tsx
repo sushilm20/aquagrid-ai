@@ -12,25 +12,25 @@ const ROLES = [
 export default function Pitch() {
   return (
     <Section id="pitch" eyebrow="For the team · read this first" title="The 30-second pitch">
-      <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm md:p-8">
-        <p className="text-[17px] leading-relaxed text-neutral-700">“{PITCH_TEXT}”</p>
+      <div className="rounded-2xl border glass p-6 shadow-sm md:p-8">
+        <p className="text-[17px] leading-relaxed text-[#c3dcea]">“{PITCH_TEXT}”</p>
         <div className="mt-5">
-          <CopyButton value={PITCH_TEXT} label="📋 Copy pitch for the team chat" className="bg-[#cd040b] font-extrabold text-white hover:bg-[#a50309]" />
+          <CopyButton value={PITCH_TEXT} label="📋 Copy pitch for the team chat" className="bg-[#0aa5c2] font-extrabold text-[#03252e] hover:bg-[#22d3ee]" />
         </div>
       </div>
-      <div className="mt-5 rounded-r-2xl border border-neutral-200 border-l-4 border-l-[#cd040b] bg-[#cd040b]/[.04] p-5 text-[15px] text-neutral-700">
-        👉 <strong className="text-[#0a0a0b]">Why this wins:</strong> it sits on the <em>Cost &amp; Sustainability Transformation</em> pillar — the
+      <div className="mt-5 rounded-r-2xl border border-[#22d3ee]/15 border-l-4 border-l-[#cd040b] bg-[#cd040b]/[.04] p-5 text-[15px] text-[#c3dcea]">
+        👉 <strong className="text-white">Why this wins:</strong> it sits on the <em>Cost &amp; Sustainability Transformation</em> pillar — the
         least crowded lane — with hard measurable numbers (gallons, dollars, WUE). Verizon pilots it on its own data
         centers, so the story is <em>dogfood → product → revenue</em>. And the demo needs <strong>$0 of hardware</strong>:
         everything is simulated software.
       </div>
-      <h3 className="mb-3 mt-8 text-lg font-extrabold text-[#0a0a0b]">Who does what</h3>
+      <h3 className="mb-3 mt-8 text-lg font-extrabold text-white">Who does what</h3>
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {ROLES.map((r) => (
-          <div key={r.k} className="rounded-2xl border border-neutral-200 bg-white p-5 transition hover:-translate-y-1 hover:border-[#cd040b]/50 hover:shadow-md">
-            <div className="text-[11px] font-extrabold tracking-[0.1em] text-[#cd040b]">{r.k}</div>
-            <div className="mt-1.5 font-extrabold text-[#0a0a0b]">{r.t}</div>
-            <div className="mt-1 text-[13.5px] text-neutral-600">{r.d}</div>
+          <div key={r.k} className="rounded-2xl border glass p-5 transition hover:-translate-y-1 hover:border-[#cd040b]/50 hover:shadow-md">
+            <div className="text-[11px] font-extrabold tracking-[0.1em] text-[#ff8a8e]">{r.k}</div>
+            <div className="mt-1.5 font-extrabold text-white">{r.t}</div>
+            <div className="mt-1 text-[13.5px] text-[#aecbda]">{r.d}</div>
           </div>
         ))}
       </div>

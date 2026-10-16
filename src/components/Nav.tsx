@@ -22,14 +22,14 @@ export default function Nav() {
   }, []);
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-neutral-200 bg-white/90 backdrop-blur-md">
+    <nav className="sticky top-0 z-50 border-b border-[#22d3ee]/15 bg-[#03121e]/90 backdrop-blur-md">
       <div className="noscroll mx-auto flex max-w-6xl gap-1 overflow-x-auto px-4 py-2.5">
         {NAV_LINKS.map((l) => (
           <a
             key={l.href}
             href={l.href}
-            className={`whitespace-nowrap rounded-lg px-3 py-2 text-[13px] font-bold transition ${
-              active === l.href ? "bg-[#cd040b] text-white" : "text-neutral-500 hover:bg-neutral-100 hover:text-[#0a0a0b]"
+            className={`navlink whitespace-nowrap rounded-lg px-3 py-2 text-[13px] font-bold transition ${
+              active === l.href ? "active" : "text-[#7fa8bb] hover:bg-white/10 hover:text-white"
             }`}
           >
             {l.label}

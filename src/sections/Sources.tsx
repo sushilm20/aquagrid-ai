@@ -74,8 +74,8 @@ export default function Sources() {
     >
       <div className="grid gap-3 md:grid-cols-2">
         {GROUPS.map((g) => (
-          <div key={g.t} className="rounded-2xl border border-neutral-200 bg-white p-5">
-            <div className="mb-3 font-extrabold text-[#0a0a0b]">{g.t}</div>
+          <div key={g.t} className="rounded-2xl border glass p-5">
+            <div className="mb-3 font-extrabold text-white">{g.t}</div>
             <ul className="space-y-2">
               {g.items.map((it) => (
                 <li key={it.url + it.label} className="text-[13.5px]">
@@ -88,7 +88,7 @@ export default function Sources() {
           </div>
         ))}
       </div>
-      <p className="mt-6 text-[13px] text-neutral-500">
+      <p className="mt-6 text-[13px] text-[#7fa8bb]">
         Dossier v1 · Built for Pardha's team — share it, don't forward the raw chat. Research verified Oct 16, 2026. Good luck 🚀
       </p>
     </Section>
