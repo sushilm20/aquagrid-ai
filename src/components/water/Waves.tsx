@@ -1,4 +1,5 @@
 import { useReducedMotion } from "motion/react";
+import { Fish } from "./Fish";
 
 const WAVE_PATH =
   "M0,64 C240,96 480,32 720,64 C960,96 1200,32 1440,64 C1680,96 1920,32 2160,64 C2400,96 2640,32 2880,64 L2880,160 L0,160 Z";
@@ -28,8 +29,10 @@ export function HeroWaves() {
   );
 }
 
-/** Wave divider between sections. `fill` = color of the section ABOVE (paints the wave). */
-export function WaveDivider({ fill, flip = false, className = "" }: { fill: string; flip?: boolean; className?: string }) {
+/** Wave divider between sections. `fill` = color of the section ABOVE (paints the wave).
+ *  `fish` = number of small fish swimming through the divider. */
+export function WaveDivider({ fill, flip = false, className = "", fish = 0 }: { fill: string; flip?: boolean; className?: string; fish?: number }) {
+  const reduced = useReducedMotion();
   return (
     <div className={`pointer-events-none relative h-[64px] w-full overflow-hidden md:h-[88px] ${className}`} aria-hidden="true">
       <svg
@@ -43,6 +46,26 @@ export function WaveDivider({ fill, flip = false, className = "" }: { fill: stri
           fill={fill}
         />
       </svg>
+      {!reduced && fish > 0 && (
+        <div className="absolute inset-0 overflow-hidden">
+          {Array.from({ length: fish }, (_, i) => (
+            <div
+              key={i}
+              className={`fish-swimmer${i % 2 ? " rev" : ""}`}
+              style={{
+                top: `${28 + ((i * 31) % 44)}%`,
+                opacity: 0.55,
+                animationDuration: `${26 + i * 7}s`,
+                animationDelay: `${-i * 11}s`,
+              }}
+            >
+              <div style={i % 2 ? { transform: "scaleX(-1)" } : undefined}>
+                <Fish size={20 + (i % 2) * 8} color={i % 2 ? "#5eead4" : "#67e8f9"} />
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

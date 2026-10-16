@@ -1,4 +1,5 @@
 import Section from "@/components/Section";
+import DataCenterScene from "@/components/water/DataCenter";
 
 const SENSORS = [
   { icon: "🌊", t: "Flow meters", d: "Ultrasonic clamp-on meters — no pipe cutting, no downtime to install. Metered per loop: makeup, recirculation, blowdown. The raw input for live WUE." },
@@ -43,6 +44,10 @@ export default function Product() {
         <strong>5G backhaul</strong> carries fused telemetry to <strong>cloud AI</strong> for cross-site WUE benchmarking,
         predictive pump maintenance, and one-click ESG reports.
       </p>
+
+      <div className="mt-6">
+        <DataCenterScene />
+      </div>
 
       <div className="mt-6 grid gap-3 md:grid-cols-3">
         <div className="rounded-2xl border glass p-5">

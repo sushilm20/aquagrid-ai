@@ -117,7 +117,7 @@ export default function Demo() {
           )}
           <div className="text-[14px] text-[#aecbda]">
             Water that <em>would</em> have been lost:{" "}
-            <span className="font-mono text-xl font-black text-[#22d3ee] tabular-nums">{saved.toFixed(1)} gal</span>
+            <span className="font-mono text-xl font-black text-[#34d399] tabular-nums">{saved.toFixed(1)} gal</span>
           </div>
         </div>
       </div>

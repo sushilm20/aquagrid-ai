@@ -136,6 +136,10 @@ body {
   --success: #34d399;
   --warning: #fbbf24;
   --danger: #ff6b6f;
+  /* ---- sustainability green (tertiary accent: planet / savings) ---- */
+  --green: #34d399;
+  --green-hi: #4ade80;
+  --green-soft: #6ee7b7;
   --shadow-resting: 0 1px 2px rgb(0 0 0 / 0.4);
   --shadow-raised: 0 6px 18px rgb(0 0 0 / 0.45);
   --shadow-floating: 0 20px 48px rgb(0 0 0 / 0.5);
@@ -200,6 +204,35 @@ body {
   30% { opacity: 1; }
   100% { transform: translateY(14px); opacity: 0; }
 }
+/* swimming fish */
+@keyframes tail-wag {
+  0%, 100% { transform: rotate(9deg); }
+  50% { transform: rotate(-9deg); }
+}
+@keyframes swim-x {
+  from { left: -12%; }
+  to { left: 104%; }
+}
+@keyframes swim-x-rev {
+  from { left: 104%; }
+  to { left: -12%; }
+}
+/* blinking server LEDs */
+@keyframes led-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+/* swaying light rays */
+@keyframes ray-sway {
+  0%, 100% { transform: rotate(-2.5deg); opacity: 0.55; }
+  50% { transform: rotate(2.5deg); opacity: 0.9; }
+}
+/* bubbles rising inside SVG scenes */
+@keyframes svg-bubble-rise {
+  0% { transform: translateY(0); opacity: 0; }
+  25% { opacity: 0.75; }
+  100% { transform: translateY(-95px); opacity: 0; }
+}
 @keyframes bob { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 8px); } }
 .scroll-hint { animation: bob 2.2s ease-in-out infinite; }
 
@@ -244,6 +277,26 @@ body {
 }
 .breach-dot { animation: breach-pulse 1.1s ease-in-out infinite; }
 .gauge-wave { animation: gauge-sway 5s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+
+/* swimming fish */
+.fish-swimmer {
+  position: absolute;
+  left: -12%;
+  animation: swim-x linear infinite;
+  will-change: left;
+}
+.fish-swimmer.rev { animation-name: swim-x-rev; left: 104%; }
+.fish-tail {
+  transform-origin: 8px 12px;
+  transform-box: view-box;
+  animation: tail-wag 0.9s ease-in-out infinite;
+}
+/* server status LEDs */
+.led { animation: led-blink 1.7s ease-in-out infinite; }
+/* underwater light rays */
+.ray { transform-origin: 50% 0%; animation: ray-sway 7s ease-in-out infinite; }
+/* SVG-scene bubbles */
+.svg-bubble { animation: svg-bubble-rise 4.2s ease-in infinite; transform-box: fill-box; }
 
 /* ripple-ring trigger button */
 .ripple-btn { position: relative; isolation: isolate; }

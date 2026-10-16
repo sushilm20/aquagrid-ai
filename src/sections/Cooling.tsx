@@ -14,6 +14,7 @@ export default function Cooling() {
     <Section
       id="cooling"
       eyebrow="Research · 02 — Cooling deep-dive"
+      dividerFish={2}
       title="Where the water actually goes"
       lead={
         <>

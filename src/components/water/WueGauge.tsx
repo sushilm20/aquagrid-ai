@@ -95,8 +95,9 @@ export default function WueGauge({
           {label} · L/kWh
         </text>
       </svg>
-      <div className="mt-1 flex gap-3 text-[11px] font-bold text-[#7fa8bb]">
+      <div className="mt-1 flex flex-wrap justify-center gap-3 text-[11px] font-bold text-[#7fa8bb]">
         <span><span className="mr-1 inline-block h-2 w-2 rounded-full bg-[#22d3ee]" />&lt;0.5 world-class</span>
+        <span><span className="mr-1 inline-block h-2 w-2 rounded-full bg-[#34d399]" />0.5–1 good</span>
         <span><span className="mr-1 inline-block h-2 w-2 rounded-full bg-[#fbbf24]" />1–2 avg</span>
         <span><span className="mr-1 inline-block h-2 w-2 rounded-full bg-[#ff6b6f]" />&gt;2 poor</span>
       </div>

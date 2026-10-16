@@ -32,7 +32,7 @@ export default function Quotables() {
       <div className="grid gap-3 md:grid-cols-2">
         {QUOTES.map((x, i) => (
           <figure key={i} className="flex flex-col rounded-2xl bg-[#0a0a0b] p-6 text-white">
-            <span className="font-mono text-3xl font-black text-[#0aa5c2]">0{i + 1}</span>
+            <span className="font-mono text-3xl font-black text-[#34d399]">0{i + 1}</span>
             <blockquote className="mt-3 flex-1 text-[16px] font-semibold leading-relaxed">“{x.q}”</blockquote>
             <figcaption className="mt-3 text-[12px] text-neutral-400">— {x.s}</figcaption>
             <div className="mt-4">

@@ -1,9 +1,9 @@
 import { motion, useReducedMotion } from "motion/react";
 import { AnimatedCounter } from "@/components/arc/animated-counter/animated-counter";
 import { CopyButton } from "@/components/arc/copy-button/copy-button";
-import { TextReveal } from "@/components/arc/text-reveal/text-reveal";
 import { HeroWaves } from "@/components/water/Waves";
 import Bubbles from "@/components/water/Bubbles";
+import { FishSchool } from "@/components/water/Fish";
 import { Droplet } from "@/components/water/Droplet";
 import { HERO_STATS, PITCH_TEXT, VERIFY_NOTE } from "@/lib/data";
 
@@ -37,6 +37,7 @@ export default function Hero() {
         />
       </div>
       <Bubbles count={26} />
+      <FishSchool count={6} />
 
       <div className="relative mx-auto max-w-6xl px-5 pb-32 pt-20 md:pb-40 md:pt-28">
         <motion.div custom={0} initial={reduced ? false : "hidden"} animate="shown" variants={rise}>
@@ -47,11 +48,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.div custom={1} initial={reduced ? false : "hidden"} animate="shown" variants={rise} className="mt-6">
-          <TextReveal
-            as="h1"
-            text="AquaGrid AI"
-            className="aqua-text text-6xl font-black tracking-tight md:text-8xl"
-          />
+          <h1 className="aqua-text text-6xl font-black tracking-tight md:text-8xl">AquaGrid AI</h1>
           <p className="mt-5 max-w-3xl text-lg leading-relaxed text-[#aecbda] md:text-xl">
             A <span className="font-bold text-white">Verizon-connected IoT sensor mesh</span> that watches every drop
             of data-center cooling water — <span className="font-bold text-white">LTE-M sensors</span> on every loop,{" "}
@@ -69,7 +66,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.div custom={3} initial={reduced ? false : "hidden"} animate="shown" variants={rise} className="mt-8 flex flex-wrap gap-3">
-          <CopyButton value={PITCH_TEXT} label="📋 Copy 30-sec pitch" className="ripple-btn bg-[#0aa5c2] font-extrabold text-[#03252e] hover:bg-[#22d3ee]" />
+          <CopyButton value={PITCH_TEXT} label="Copy 30-sec pitch" className="ripple-btn bg-[#0aa5c2] font-extrabold text-[#03252e] hover:bg-[#22d3ee]" />
           <a href="#pitch" className="inline-flex items-center rounded-xl border border-[#22d3ee]/30 px-6 py-3 text-[15px] font-bold text-white transition hover:border-[#22d3ee] hover:bg-[#22d3ee]/10">
             Read the pitch ↓
           </a>
@@ -85,9 +82,11 @@ export default function Hero() {
               variants={rise}
               className="glass hoverable rounded-2xl p-5"
             >
-              <div className="flex items-center gap-2 text-3xl font-black text-[#22d3ee] md:text-4xl">
-                <Droplet size={26} />
-                <AnimatedCounter value={s.value} decimals={s.decimals ?? 0} prefix={s.prefix} suffix={s.suffix} animateOnView />
+              <div className="flex min-w-0 items-center gap-2 text-2xl font-black leading-tight text-[#22d3ee] md:text-3xl">
+                <Droplet size={24} className="shrink-0" />
+                <span className="min-w-0">
+                  <AnimatedCounter value={s.value} decimals={s.decimals ?? 0} prefix={s.prefix} suffix={s.suffix} animateOnView />
+                </span>
               </div>
               <div className="mt-2 text-[13px] font-semibold leading-snug text-[#d9edf5]">{s.label}</div>
               <div className="mt-1 text-[11px] text-[#7fa8bb]">{s.sub}</div>

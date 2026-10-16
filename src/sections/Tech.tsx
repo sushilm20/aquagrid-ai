@@ -36,7 +36,7 @@ export default function Tech() {
         ))}
       </div>
       <div className="mt-6 flex flex-wrap gap-2">
-        <span className="rounded-full bg-[#cd040b]/10 px-4 py-2 text-[13px] font-extrabold text-[#ff8a8e]">Cost &amp; Sustainability Transformation · primary</span>
+        <span className="rounded-full bg-[#34d399]/10 px-4 py-2 text-[13px] font-extrabold text-[#6ee7b7]">Cost &amp; Sustainability Transformation · primary</span>
         <span className="rounded-full bg-[#0aa5c2]/10 px-4 py-2 text-[13px] font-extrabold text-[#67e8f9]">AI-Driven Automation &amp; Efficiency · secondary</span>
       </div>
       <p className="mt-4 max-w-3xl text-[13.5px] text-[#aecbda]">

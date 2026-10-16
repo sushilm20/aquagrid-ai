@@ -60,11 +60,11 @@ export default function Roi() {
             <div className="min-w-[220px] flex-1">
               <div className="text-[12px] font-extrabold uppercase tracking-[0.14em] text-[#7fa8bb]">Projected annual savings</div>
               <div className="mt-3 flex items-baseline gap-2">
-                <span className="font-mono text-5xl font-black text-[#22d3ee] tabular-nums">{fmt(savedGal)}</span>
+                <span className="font-mono text-5xl font-black text-[#34d399] tabular-nums">{fmt(savedGal)}</span>
                 <span className="text-[#7fa8bb]">gallons</span>
               </div>
               <div className="mt-2 flex items-baseline gap-2">
-                <span className="font-mono text-4xl font-black text-white tabular-nums">${fmt(savedUsd)}</span>
+                <span className="font-mono text-4xl font-black text-[#34d399] tabular-nums">${fmt(savedUsd)}</span>
                 <span className="text-[#7fa8bb]">in water cost</span>
               </div>
             </div>

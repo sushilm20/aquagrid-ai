@@ -11,15 +11,16 @@ interface SectionProps {
   lead?: ReactNode;
   children: ReactNode;
   tint?: boolean;
+  dividerFish?: number;
 }
 
 /** Shared dossier section: wave divider, eyebrow, animated title, lead, content. */
-export default function Section({ id, eyebrow, title, lead, children, tint }: SectionProps) {
+export default function Section({ id, eyebrow, title, lead, children, tint, dividerFish = 0 }: SectionProps) {
   const reduced = useReducedMotion();
   const bg = tint ? "#062335" : "#03121e";
   return (
     <section id={id} className="relative scroll-mt-20" style={{ background: bg }}>
-      <WaveDivider fill="#020d16" />
+      <WaveDivider fill="#020d16" fish={dividerFish} />
       <div className="relative mx-auto max-w-6xl px-5 pb-16 pt-2 md:pb-20 md:pt-4">
         <motion.div
           initial={reduced ? false : { opacity: 0, y: 24 }}

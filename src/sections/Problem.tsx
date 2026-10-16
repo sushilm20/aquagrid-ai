@@ -27,6 +27,7 @@ export default function Problem() {
     <Section
       id="problem"
       eyebrow="Research · 01 — The problem"
+      dividerFish={2}
       title="Data centers are water monsters — and they're flying blind"
       lead={
         <>
